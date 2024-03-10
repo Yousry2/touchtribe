@@ -31,6 +31,11 @@
                          "codeCoverage": true
                     }
                }
+          },
+          "@angular-devkit/build-angular:application": {
+               "cache": true,
+               "dependsOn": ["^build"],
+               "inputs": ["production", "^production"]
           }
      },
      "namedInputs": {
@@ -50,10 +55,10 @@
      "nxCloudAccessToken": "MmYyNmNlNjctMDI1NC00MDY3LTliYTQtZjZkMTY4MTljN2YwfHJlYWQtd3JpdGU=",
      "generators": {
           "@nx/angular:application": {
-               "style": "css",
+               "e2eTestRunner": "playwright",
                "linter": "eslint",
-               "unitTestRunner": "jest",
-               "e2eTestRunner": "playwright"
+               "style": "css",
+               "unitTestRunner": "jest"
           },
           "@nx/angular:library": {
                "linter": "eslint",
@@ -62,5 +67,19 @@
           "@nx/angular:component": {
                "style": "css"
           }
-     }
+     },
+     "plugins": [
+          {
+               "plugin": "@nx/eslint/plugin",
+               "options": {
+                    "targetName": "lint"
+               }
+          },
+          {
+               "plugin": "@nx/playwright/plugin",
+               "options": {
+                    "targetName": "e2e"
+               }
+          }
+     ]
 }
