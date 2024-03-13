@@ -1,0 +1,17 @@
+{
+     "name": "pension-details",
+     "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+     "sourceRoot": "libs/pension-app/pension-details/src",
+     "prefix": "operations",
+     "tags": [],
+     "projectType": "library",
+     "targets": {
+          "test": {
+               "executor": "@nx/jest:jest",
+               "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+               "options": {
+                    "jestConfig": "libs/pension-app/pension-details/jest.config.ts"
+               }
+          }
+     }
+}

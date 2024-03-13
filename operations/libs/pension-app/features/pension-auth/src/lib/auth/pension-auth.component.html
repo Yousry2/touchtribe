@@ -1,0 +1,26 @@
+<main data-theme="light"
+      class="flex min-h-screen justify-center items-center font-quicksand bg-gray-50">
+     <section class="flex backdrop-blur-md p-3 shadow-lg max-w-6xl shadow-gray-400 rounded-2xl">
+          <div class="w-1/2 max-lg:hidden rounded-2xl">
+               <img ngSrc="{{ baseHref }}assets/pension-auth/images/register.jpeg"
+                    style="view-transition-name: register"
+                    priority
+                    width="500"
+                    height="200"
+                    alt=""
+                    class="min-w-full h-full object-center object-fill rounded-2xl" />
+          </div>
+          <div class="w-1/2 max-lg:w-full">
+               <div class="flex flex-col mx-12 mt-4 max-sm:mx-4">
+                    <img alt="logo"
+                         class="self-end w-32"
+                         style="view-transition-name: logo"
+                         ngSrc="{{ baseHref }}assets/pension-auth/images/logo.svg"
+                         height="20"
+                         priority
+                         width="20" />
+                    <router-outlet></router-outlet>
+               </div>
+          </div>
+     </section>
+</main>

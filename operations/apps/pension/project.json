@@ -8,16 +8,30 @@
      "targets": {
           "build": {
                "executor": "@angular-devkit/build-angular:application",
-               "outputs": ["{options.outputPath}"],
+               "outputs": [
+                    "{options.outputPath}"
+               ],
                "options": {
                     "outputPath": "dist/apps/pension",
                     "index": "apps/pension/src/index.html",
                     "browser": "apps/pension/src/main.ts",
-                    "polyfills": ["zone.js"],
+                    "polyfills": [
+                         "zone.js"
+                    ],
                     "tsConfig": "apps/pension/tsconfig.app.json",
                     "inlineStyleLanguage": "scss",
-                    "assets": ["apps/pension/src/favicon.ico", "apps/pension/src/assets"],
-                    "styles": ["apps/pension/src/styles.scss"],
+                    "assets": [
+                         "apps/pension/src/favicon.ico",
+                         "apps/pension/src/assets",
+                         {
+                              "input": "libs/pension-app/features/pension-auth/src/assets",
+                              "glob": "**/*",
+                              "output": "assets/pension-auth"
+                         }
+                    ],
+                    "styles": [
+                         "apps/pension/src/styles.scss"
+                    ],
                     "scripts": []
                },
                "configurations": {
@@ -32,6 +46,12 @@
                                    "type": "anyComponentStyle",
                                    "maximumWarning": "2kb",
                                    "maximumError": "4kb"
+                              }
+                         ],
+                         "fileReplacements": [
+                              {
+                                   "replace": "libs/shared/util-environments/src/lib/environment.ts",
+                                   "with": "libs/shared/util-environments/src/lib/environment.prod.ts"
                               }
                          ],
                          "outputHashing": "all"
@@ -64,7 +84,9 @@
           },
           "test": {
                "executor": "@nx/jest:jest",
-               "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+               "outputs": [
+                    "{workspaceRoot}/coverage/{projectRoot}"
+               ],
                "options": {
                     "jestConfig": "apps/pension/jest.config.ts"
                }

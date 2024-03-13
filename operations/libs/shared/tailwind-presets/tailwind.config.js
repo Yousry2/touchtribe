@@ -1,4 +1,15 @@
 module.exports = {
+     daisyui: {
+          themes: [
+               {
+                    light: {
+                         ...require('daisyui/src/theming/themes')['light'],
+                         primary: 'gray',
+                         secondary: 'red',
+                    },
+               },
+          ],
+     },
      theme: {
           extend: {
                fontFamily: {
@@ -36,4 +47,5 @@ module.exports = {
           },
      },
      plugins: [require('@tailwindcss/forms')],
+     plugins: [require('daisyui')],
 };

@@ -2,4 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+     font-family: 'LIBRE';
+     src: url('./assets/fonts/Libre_Franklin/LibreFranklin-VariableFont_wght.ttf');
+}
+
+@font-face {
+     font-family: 'LIBRE';
+     font-style: italic;
+     src: url('./assets/fonts/Libre_Franklin/LibreFranklin-Italic-VariableFont_wght.ttf');
+}
+@font-face {
+     font-family: 'QUICKSAND';
+     src: url('./assets/fonts/Quicksand/Quicksand-VariableFont_wght.ttf');
+}
+@layer components {
+     .input-focus-hightlight {
+          @apply input input-bordered flex items-center gap-2  focus-within:ring-0 focus-within:ring-offset-0 focus-within:outline-none  
+                           focus-within:shadow-xl transition duration-500  focus-within:border-secondary focus-within:scale-105;
+     }
+}

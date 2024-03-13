@@ -1,0 +1,178 @@
+<div class="mt-6">
+     <div class="text-3xl font-bold leading-loose">
+          Hi, Welcome to <span class="text-primary font-extrabold">Zwitser</span><span
+                class="text-secondary font-extrabold">leven</span>
+     </div>
+     <div class="text-base text-gray-500">Create your Pension profile and track your savings online.</div>
+</div>
+<form [formGroup]="signUpForm"
+      (ngSubmit)="submitForm()">
+     <div class="my-4">
+
+          <div class="mt-4">
+               <div class="form-control w-full">
+                    <div class="label">
+                         <span for="email"
+                               class="">Email</span>
+
+                         @if (f.email.invalid && (f.email.touched || submitted)) {
+                         <span class="text-error label-text"
+                               test-id="pension-auth-signup-email-input-invalid">
+                              @if (f.email.errors?.required) {
+                              Email is Required
+                              } @else if (f.email.errors?.email) {
+                              Please Enter a valid email
+                              }
+                         </span>
+                         }
+                    </div>
+                    <label class="input-focus-hightlight">
+                         <img src="
+                       {{ baseHref }}assets/pension-auth/icons/email.svg"
+                              alt="email"
+                              class="w-6 h-6 pointer-events-none" />
+                         <input type="text"
+                                test-id="pension-auth-signup-email-input"
+                                [formControl]="f.email"
+                                name="email"
+                                id="email"
+                                class="grow placeholder-gray-500"
+                                placeholder="Enter Your Email" />
+                    </label>
+               </div>
+          </div>
+
+          <div class="mt-4">
+               <div class="form-control w-full">
+                    <div class="label">
+                         <span for="password"
+                               class="">Password</span>
+
+                         @if (f.password.invalid && (f.password.touched || submitted)) {
+                         <span class="text-error label-text"
+                               test-id="pension-auth-signup-password-input-invalid">
+                              @if (f.password.errors?.required) {
+                              Password is Required
+                              } @else if (
+                              submitted && (f.password.errors?.pattern || f.password.errors?.minlength)
+                              ) {
+                              Password has to be at least 8 characters and contains upper and lower case
+                              } @else if (submitted && f.password.errors?.containsFirstOrLastName) {
+                              Password shouldn't contain first or last name
+                              }
+                         </span>
+                         }
+                    </div>
+                    <label class="input-focus-hightlight">
+                         <img src="
+                       {{ baseHref }}assets/pension-auth/icons/lock.svg"
+                              alt="password"
+                              class="w-6 h-6 pointer-events-none" />
+                         <input type="password"
+                                test-id="pension-auth-signup-password-input"
+                                [formControl]="f.password"
+                                name="password"
+                                id="password"
+                                class="grow placeholder-gray-500"
+                                placeholder="Enter Your Password" />
+                    </label>
+               </div>
+          </div>
+     </div>
+     <div class="my-6">
+          <div class="flex justify-between items-center">
+               <hr class="w-full border-gray-400" />
+               <span class="px-4 font-light tracking-wider text-sm text-gray-500 whitespace-nowrap">Personal
+                    Information</span>
+
+               <hr class="w-full border-gray-400" />
+          </div>
+          <div
+               class="flex max-md:flex-col max-md:space-y-4 max-md:space-x-0 space-x-8 mt-4 justify-between items-stretch">
+               <div class="form-control w-full">
+                    <div class="label">
+                         <span for="firstName"
+                               class="">First Name</span>
+
+                         @if ((submitted || f.firstName.touched) && f.firstName.errors?.required) {
+                         <span class="text-error label-text"
+                               test-id="pension-auth-signup-firstName-input-required">
+                              Required
+                         </span>
+                         }
+                    </div>
+                    <label class="input-focus-hightlight">
+                         <img src="
+                       {{ baseHref }}assets/pension-auth/icons/lock.svg"
+                              alt="user"
+                              class="w-6 h-6 pointer-events-none" />
+                         <input type="text"
+                                test-id="pension-auth-signup-firstName-input"
+                                [formControl]="f.firstName"
+                                name="firstName"
+                                id="firstName"
+                                class="grow placeholder-gray-500"
+                                placeholder="First Name" />
+                    </label>
+               </div>
+               <div class="form-control w-full">
+                    <div class="label">
+                         <span for="lastName"
+                               class="">Last Name</span>
+
+                         @if ((submitted || f.lastName.touched) && f.lastName.errors?.required) {
+                         <span class="text-error label-text"
+                               test-id="pension-auth-signup-lastName-input-required">
+                              Required
+                         </span>
+                         }
+                    </div>
+                    <label class="input-focus-hightlight">
+                         <img src="
+                       {{ baseHref }}assets/pension-auth/icons/lock.svg"
+                              alt="user"
+                              class="w-6 h-6 pointer-events-none" />
+                         <input type="text"
+                                test-id="pension-auth-signup-lastName-input"
+                                [formControl]="f.lastName"
+                                name="lastName"
+                                id="lastName"
+                                class="grow placeholder-gray-500"
+                                placeholder="Last Name" />
+                    </label>
+               </div>
+          </div>
+     </div>
+
+     <div class="flex flex-col my-4">
+          <div class="flex justify-between items-center">
+               <div class="flex items-center">
+                    <input type="checkbox"
+                           test-id="pension-auth-signup-termsAndConditions-input"
+                           [formControl]="f.termsAndConditions"
+                           class="checkbox checkbox-secondary rounded border border-gray-400 focus:ring-secondary"
+                           [ngClass]="{
+                              'border-error ':
+                                   (submitted || f.termsAndConditions.touched) && f.termsAndConditions.value === false
+                         }"
+                           name="termsAndConditions"
+                           id="termsAndConditions" />
+                    <label for="termsAndConditions"
+                           class="pl-4 text-sm font-light text-gray-900">
+                         I agree to the terms conditions for Pension
+                    </label>
+               </div>
+
+               <a href="#"
+                  class="text-sm text-secondary hover:text-primary">Terms and conditions</a>
+          </div>
+     </div>
+     <div class="my-4">
+          <button type="submit"
+                  [disabled]="isLoading()"
+                  test-id="pension-auth-signup-submit-button"
+                  class="py-4 px-8 w-full text-white btn-secondary bg-secondary rounded-lg shadow-lg disabled:opacity-50 opacity-90 hover:opacity-100 focus:ring-8 focus:ring-red-100 focus:outline-none">
+               {{ buttonText() }}
+          </button>
+     </div>
+</form>

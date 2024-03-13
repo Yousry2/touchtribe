@@ -15,6 +15,9 @@
           "skipDefaultLibCheck": true,
           "baseUrl": ".",
           "paths": {
+               "@operations/pension-auth": ["libs/pension-app/features/pension-auth/src/index.ts"],
+               "@operations/pension-data-access": ["libs/pension-app/pension-data-access/src/index.ts"],
+               "@operations/pension-details": ["libs/pension-app/features/pension-details/src/index.ts"],
                "@operations/tailwind-presets": ["libs/shared/tailwind-presets/src/index.ts"],
                "@operations/util-common": ["libs/shared/util-common/src/index.ts"],
                "@operations/util-environments": ["libs/shared/util-environments/src/index.ts"]
