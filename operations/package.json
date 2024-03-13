@@ -6,7 +6,7 @@
     "start-pension": "nx run pension:serve:development",
     "test-pension": "nx run pension-auth:test",
     "e2e-pension": "nx e2e pension-e2e",
-    "build-pension": "nx run pension:build:production --base-href='/operations/'"
+    "build-pension": "nx run pension:build:production --base-href='/touchtribe/'"
   },
   "private": true,
   "devDependencies": {
