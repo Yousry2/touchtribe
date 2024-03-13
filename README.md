@@ -1,6 +1,6 @@
 # Touch Tribe Pension App
 
-<a alt="DA-DESK logo" href="https://yousry2.github.io/touchtribe" target="_blank" rel="noreferrer"><img src="https://yousry2.github.io/tourchtribe/static/screenshot.jpg" width="800"></a>
+<a alt="DA-DESK logo" href="https://yousry2.github.io/touchtribe" target="_blank" rel="noreferrer"><img src="https://yousry2.github.io/touchtribe/static/screenshot.jpg" width="800"></a>
 
 ## ✨ ** [Check Live Demo](https://yousry2.github.io/touchtribe/).✨ **
 
@@ -17,15 +17,15 @@
 
 2- [[Done]] ~~Add Unit Testing for parsing functionlities~~
 
-3- [[Done]] Add responsive design for mobile and tablet screens
+3- [[Done]] ~~Add responsive design for mobile and tablet screens~~
 
 4- [[Done]] ~~Add input signals to main components (Signup Page)~~
 
-5- [[Done]] Implement the new Signal Store
+5- [[Done]] ~~Implement the new Signal Store~~
 
-6- [[Done]] Use the new ViewTransition API
+6- [[Done]] ~~Use the new ViewTransition API~~
 
-7- [[Done]] ~~Generate JsDocs~~
+7- Generate JsDocs
 
 8- Add GraphJs library
 
