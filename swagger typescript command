@@ -1,0 +1,1 @@
+npx swagger-typescript-api --templates ./libs/retirement/data-access/backend/templates    -p ./libs/retirement/data-access/backend/pension-calculation-swagger.json -o ../libs/retirement-app/retirement-data-access/src/lib/epi-api/services --responses --module-name-index 2 --modular --extract-response-body --union-enums --single-http-client --extract-request-params 
